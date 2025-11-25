@@ -1,0 +1,89 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter debug_adapter
+
+## exception
+
+RPCError: readyToResume: (-32603) Unexpected DWDS error for resume: WipError -32000 Cannot find context with specified id
+
+```
+#0      new _OutstandingRequest (package:vm_service/src/vm_service.dart:268:34)
+#1      VmService._call.<anonymous closure> (package:vm_service/src/vm_service.dart:1950:25)
+#2      VmService._call (package:vm_service/src/vm_service.dart:1962:8)
+#3      VmService.callServiceExtension (package:vm_service/src/vm_service.dart:1901:14)
+#4      VmService.callMethod (package:vm_service/src/vm_service.dart:1884:12)
+#5      DdsExtension._callHelper (package:dds_service_extensions/dds_service_extensions.dart:365:12)
+#6      DdsExtension.readyToResume (package:dds_service_extensions/dds_service_extensions.dart:323:12)
+<asynchronous suspension>
+#7      IsolateManager._readyToResume (package:dds/src/dap/isolate_manager.dart:425:7)
+<asynchronous suspension>
+#8      IsolateManager.readyToResumeThread (package:dds/src/dap/isolate_manager.dart:306:5)
+<asynchronous suspension>
+#9      IsolateManager._handlePause (package:dds/src/dap/isolate_manager.dart:695:7)
+<asynchronous suspension>
+#10     IsolateManager.handleEvent (package:dds/src/dap/isolate_manager.dart:207:7)
+<asynchronous suspension>
+#11     DartDebugAdapter.handleDebugEvent (package:dds/src/dap/adapters/dart.dart:2470:5)
+<asynchronous suspension>
+#12     DartDebugAdapter._withErrorHandling (package:dds/src/dap/adapters/dart.dart:2832:14)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.35.5, on Microsoft Windows [Version 10.0.19045.6466], locale en-US) [4.2s]
+    • Flutter version 3.35.5 on channel stable at C:\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision ac4e799d23 (8 weeks ago), 2025-09-26 12:05:09 -0700
+    • Engine revision d3d45dcf25
+    • Dart version 3.9.2
+    • DevTools version 2.48.0
+    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-lldb-debugging
+
+[✓] Windows Version (10 Pro 64-bit, 22H2, 2009) [31.2s]
+
+[!] Android toolchain - develop for Android devices (Android SDK version 36.1.0) [17.2s]
+    • Android SDK at C:\Users\HP\AppData\Local\Android\sdk
+    • Emulator version 36.1.9.0 (build_id 13823996) (CL:N/A)
+    ✗ cmdline-tools component is missing.
+      Try installing or updating Android Studio.
+      Alternatively, download the tools from https://developer.android.com/studio#command-line-tools-only and make sure to set the ANDROID_HOME environment variable.
+      See https://developer.android.com/studio/command-line for more details.
+    ✗ Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/to/windows-android-setup for more details.
+
+[✓] Chrome - develop for the web [2.4s]
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[!] Visual Studio - develop Windows apps (Visual Studio Community 2022 17.11.5) [2.4s]
+    • Visual Studio at C:\Program Files\Microsoft Visual Studio\2022\Community
+    • Visual Studio Community 2022 version 17.11.35327.3
+    ✗ Visual Studio is missing necessary components. Please re-run the Visual Studio installer for the "Desktop development with C++" workload, and include these components:
+        MSVC v142 - VS 2019 C++ x64/x86 build tools
+         - If there are multiple build tool versions available, install the latest
+        C++ CMake tools for Windows
+        Windows 10 SDK
+
+[!] Android Studio (not installed) [34ms]
+    • Android Studio not found; download from https://developer.android.com/studio/index.html
+      (or visit https://flutter.dev/to/windows-android-setup for detailed instructions).
+
+[✓] VS Code (version 1.105.1) [33ms]
+    • VS Code at C:\Users\HP\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.122.0
+
+[✓] Connected device (3 available) [11.6s]
+    • Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.19045.6466]
+    • Chrome (web)      • chrome  • web-javascript • Google Chrome 126.0.6478.127
+    • Edge (web)        • edge    • web-javascript • Microsoft Edge 142.0.3595.94
+
+[✓] Network resources [3.4s]
+    • All expected network resources are available.
+
+! Doctor found issues in 3 categories.
+```
